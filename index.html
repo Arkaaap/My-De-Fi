@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple DApp</title>
+</head>
+<body>
+  <h1>Counter DApp</h1>
+  <p>Count: <span id="count">loading...</span></p>
+  <button onclick="increment()">Increment</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script>
+    const contractAddress = '0x6205d90B084FDAB5Bcab6F05F1E05F2a96525C31';
+    const abi = [ // Only need the parts you're using
+      "function getCount() public view returns (uint)",
+      "function increment() public"
+    ];
+
+    async function load() {
+      if (window.ethereum) {
+        await ethereum.request({ method: 'eth_requestAccounts' });
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        window.contract = new ethers.Contract(contractAddress, abi, signer);
+        getCount();
+      } else {
+        alert('Please install MetaMask!');
+      }
+    }
+
+    async function getCount() {
+      const count = await window.contract.getCount();
+      document.getElementById('count').innerText = count;
+    }
+
+    async function increment() {
+      await window.contract.increment();
+      getCount();
+    }
+
+    load();
+  </script>
+</body>
+</html>
