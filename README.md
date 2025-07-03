@@ -22,3 +22,7 @@ This is a decentralized application (DApp) built with:
 
 ## 📦 Project Structure
 
+
+## company : CODETECH IT SOLUTIONS Name : Arkapriya Das Intern Id : CT08DG657 Domain : BLOCKCHAIN TECHNOLOGY Duration : 8 weeks Mentor : NEELA SANTOSH
+
+
