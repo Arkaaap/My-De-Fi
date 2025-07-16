@@ -4,7 +4,7 @@
 
 # 🔗 Simple Counter DApp
 
-This is a decentralized application (DApp) built with:
+This is a decentralized Finance application (Defi) built with:
 
 - ✅ **Solidity smart contract** deployed on a testnet via [Remix IDE](https://remix.ethereum.org)
 - ✅ **Frontend** built with HTML + JavaScript (using [ethers.js](https://docs.ethers.org/))
